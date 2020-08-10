@@ -1,34 +1,35 @@
-﻿using AutoHotkey.Interop.Util;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xunit;
 
-namespace AutoHotkey.Interop.Tests.Util
+namespace AutoHotkey.Interop.Core.Util.Tests
 {
-    public class EmbededAhkDllFilesTests
+    [TestClass]
+    public class EmbededAhkDllFileTests
     {
-        [Fact]
-        public void has_x86_ahkdll_embeded() {
+        [TestMethod]
+        public void HasX86AhkdllEmbeded()
+        {
             VerifyEmbededResource("AutoHotkey.Interop.x86.AutoHotkey.dll");
         }
 
-        [Fact]
-        public void has_x64_ahkdll_embeded() {
+        [TestMethod]
+        public void HasX64AhkdllEmbeded()
+        {
             VerifyEmbededResource("AutoHotkey.Interop.x64.AutoHotkey.dll");
         }
 
-        private static void VerifyEmbededResource(string embededResourceFullName) {
+        private static void VerifyEmbededResource(string embededResourceFullName)
+        {
             var interopAssembly = typeof(AutoHotkeyEngine).Assembly;
             var assemblyResourceNames = interopAssembly.GetManifestResourceNames();
             bool foundResource = assemblyResourceNames.Contains(embededResourceFullName);
 
-            Assert.True(foundResource,
+            Assert.IsTrue(foundResource,
                 string.Format("Could not find the embeded resource '{0}'", embededResourceFullName));
         }
-
-       
     }
 }

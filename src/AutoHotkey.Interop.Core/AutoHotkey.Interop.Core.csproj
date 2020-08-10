@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>AutoHotkey.Interop</RootNamespace>
+    <AssemblyName>AutoHotkey.Interop.Core</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Pipes\pipeclient.ahk" />
+    <None Remove="x64\AutoHotkey.dll" />
+    <None Remove="x64\v2_AutoHotkey.dll" />
+    <None Remove="x86\AutoHotkey.dll" />
+    <None Remove="x86\v2_AutoHotkey.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Pipes\pipeclient.ahk" />
+    <EmbeddedResource Include="x64\AutoHotkey.dll" />
+    <EmbeddedResource Include="x64\v2_AutoHotkey.dll" />
+    <EmbeddedResource Include="x86\AutoHotkey.dll" />
+    <EmbeddedResource Include="x86\v2_AutoHotkey.dll" />
+  </ItemGroup>
+
+</Project>

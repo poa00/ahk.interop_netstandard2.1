@@ -28,11 +28,11 @@ namespace AutoHotkey.Interop
 
         private SafeLibraryHandle() : base(true) { }
 
-        protected override bool ReleaseHandle() 
-        { 
-            return FreeLibrary(handle); 
+        protected override bool ReleaseHandle()
+        {
+            return FreeLibrary(handle);
         }
-        
+
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);

@@ -186,3 +186,4 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+/src/.vs/AutoHotkey.Interop/v16/TestStore/0
